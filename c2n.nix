@@ -88,5 +88,6 @@ in hself: hsuper: {
       composeList = x: lib.foldl' compose lib.id x;
     };
 
-    composeList apply (hlib.overrideCabal (hself.callPackage expr args) (orig: { src = rawPath; })))
+    composeList apply (hlib.overrideCabal (hself.callPackage expr args) (orig: { src = rawPath; })));
+
 }
