@@ -2,65 +2,24 @@
 , fetchFromGitHub
 }:
 
-hself: hsuper: {
-  trasa = hsuper.c2n {
-    name = "trasa";
+let
+  trasaPkg = name: hsuper: hsuper.c2n {
+    inherit name;
     rawPath = fetchFromGitHub {
       owner = "haskell-trasa";
       repo = "trasa";
-      rev = "1d958c8b92e98d6e0245574d162412c79d49e6bd";
-      sha256 = "019c7sn8dy6drd2f0gy063nfp9i2lg8nhqmvjnidychigj4myf6l";
+      rev = "4105723995a336a009ca1b094cae8fc906193fcf";
+      sha256 = "19rv5y37rakppnqdm00pbb8h7l53cc0dbrbb9w8sy5w6gahmd3ws";
     };
-    relativePath = "trasa";
+    relativePath = name;
     apply = [ ];
   };
-
-  trasa-client = hsuper.c2n {
-    name = "trasa-client";
-    rawPath = fetchFromGitHub {
-      owner = "haskell-trasa";
-      repo = "trasa";
-      rev = "1d958c8b92e98d6e0245574d162412c79d49e6bd";
-      sha256 = "019c7sn8dy6drd2f0gy063nfp9i2lg8nhqmvjnidychigj4myf6l";
-    };
-    relativePath = "trasa-client";
-    apply = [ ];
-  };
-
-  trasa-server = hsuper.c2n {
-    name = "trasa-server";
-    rawPath = fetchFromGitHub {
-      owner = "haskell-trasa";
-      repo = "trasa";
-      rev = "1d958c8b92e98d6e0245574d162412c79d49e6bd";
-      sha256 = "019c7sn8dy6drd2f0gy063nfp9i2lg8nhqmvjnidychigj4myf6l";
-    };
-    relativePath = "trasa-server";
-    apply = [ ];
-  };
-
-  trasa-th = hsuper.c2n {
-    name = "trasa-th";
-    rawPath = fetchFromGitHub {
-      owner = "haskell-trasa";
-      repo = "trasa";
-      rev = "1d958c8b92e98d6e0245574d162412c79d49e6bd";
-      sha256 = "019c7sn8dy6drd2f0gy063nfp9i2lg8nhqmvjnidychigj4myf6l";
-    };
-    relativePath = "trasa-th";
-    apply = [ ];
-  };
-
-  trasa-extra = hsuper.c2n {
-    name = "trasa-extra";
-    rawPath = fetchFromGitHub {
-      owner = "goolord";
-      repo = "trasa-extra";
-      sha256 = "0g62h1ljp3myrwpdn7lxbk12rk059khpawh8nh2dp8hfscrla53a";
-      rev = "1ae01da873c66c13731a4ec687d281a8f50a179e";
-    };
-    apply = [ ];
-  };
+in hself: hsuper: {
+  trasa = trasaPkg "trasa" hsuper;
+  trasa-client = trasaPkg "trasa-client" hsuper;
+  trasa-server = trasaPkg "trasa-server" hsuper;
+  trasa-th = trasaPkg "trasa-th" hsuper;
+  trasa-extra = trasaPkg "trasa-extra" hsuper;
 
   wai = hsuper.c2n {
     name = "wai";
@@ -73,5 +32,4 @@ hself: hsuper: {
     relativePath = "wai";
     apply = [ ];
   };
-
 }
