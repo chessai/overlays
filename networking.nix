@@ -61,8 +61,8 @@ hself: hsuper: {
     rawPath = fetchFromGitHub {
       owner = "andrewthad";
       repo = "sockets";
-      rev = "7e042283266f00004a8b56bca96bc144f5961dc7";
-      sha256 = "09jj1xzqzryzw3d7pw7257zqfnrjnn3m68wbya81rs6h101gaj1d";
+      rev = "d86f2e25064070622c20f115ec9b23243993027a";
+      sha256 = "1vwlg0xifzai3wvwj8f31zgp61s9qg2agnaa1pbb4hz01fscggam";
     };
     apply = [ ];
   }) (old: {
