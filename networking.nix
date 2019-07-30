@@ -30,8 +30,8 @@ hself: hsuper: {
     rawPath = fetchFromGitHub {
       owner = "andrewthad";
       repo = "posix-api";
-      rev = "6344f841b969cb70195e49093be1504b4a84f7c5";
-      sha256 = "09d025jfiaznwzsr9fny4ncb51nh5vbhj5nwb1y2y6w8ivgs717r";
+      rev = "5d8a1ee0a8bbd68135b1a1e6235c98b236cb1e6d";
+      sha256 = "1biilq0i4mzzys2n5lfxd5dcj7cl2xnnwvl0h0dg32skm2glb9mk";
     };
   };
 
@@ -61,8 +61,8 @@ hself: hsuper: {
     rawPath = fetchFromGitHub {
       owner = "andrewthad";
       repo = "sockets";
-      rev = "58b5bfc54c3ee77984871bec91ad5f08c46fa6eb";
-      sha256 = "1sdpaxz65y565rzrsnprj9nr4lbmzylqpkraps4n9f26cb2f0i1s";
+      rev = "340197674a71eb0a70baa8672cd4c7420fbb6485";
+      sha256 = "0hvnlz8z88ygbfvaa27bqkc4gwhaqad61j5p95mdlk94mq2x4x62";
     };
     apply = [ ];
   }) (old: {
