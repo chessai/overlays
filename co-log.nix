@@ -19,6 +19,17 @@ in hself: hsuper: {
   co-log-core = cologPkg "co-log-core" hsuper;
   co-log = cologPkg "co-log" hsuper;
 
+  ansi-terminal = hsuper.c2n {
+    name = "ansi-terminal";
+    rawPath = fetchFromGitHub {
+      owner = "feuerbach";
+      repo = "ansi-terminal";
+      rev = "1236abd3621060a82e60c22c74947670d33bdde6";
+      sha256 = "1z94yznrm83074and6bidbvdg4358y3695s9h8a1bsl2yhqg8vvx";
+    };
+    apply = [ ];
+  };
+
   typerep-map = hsuper.c2n {
     name = "typerep-map";
     rawPath = fetchFromGitHub {
