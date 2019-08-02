@@ -45,7 +45,7 @@ in hself: hsuper: {
     name = "concurrent-output";
     rawPath = builtins.fetchGit {
       url = "git://git.joeyh.name/concurrent-output.git";
-      rev = "master";
+      rev = "ffe93a50b6433983b65cbbc913cd23ed9dc1046b";
     };
     apply = [ ];
   };
