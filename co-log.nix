@@ -40,4 +40,13 @@ in hself: hsuper: {
     };
     apply = [ ];
   };
+
+  concurrent-output = hsuper.c2n {
+    name = "concurrent-output";
+    rawPath = builtins.fetchgit {
+      url = "git://git.joeyh.name/concurrent-output.git";
+      rev = "master";
+    };
+    apply = [ ];
+  };
 }
