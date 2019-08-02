@@ -8,8 +8,8 @@ let
     rawPath = fetchFromGitHub {
       owner = "haskell-trasa";
       repo = "trasa";
-      rev = "c533ec1189b3802ab3fb9c879bfae3ebf4a4c6ec";
-      sha256 = "0ny9hcv87z6pbp0y4sq25byncf4i9xjzr3xzfg5h7riiim9xpr7f";
+      sha256 = "124b4hdhqkk8pikbpll3ai1kcd95swfbazrn5bw0vr11rqj28asl";
+      rev = "9caec5cfb9cd88bb32caa66436f045ce199747a5";
     };
     relativePath = name;
     apply = [ ];
