@@ -1,5 +1,6 @@
 { hlib # haskell.lib
 , fetchFromGitHub
+, ...
 }:
 
 let
