@@ -1,6 +1,7 @@
 { lib # pkgs.lib
 , hlib # haskell.lib
 , fetchFromGitHub
+, ...
 }:
 
 hself: hsuper: {

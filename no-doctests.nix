@@ -1,4 +1,5 @@
 { hlib # haskell.lib
+, ...
 }:
 
 hself: hsuper: {

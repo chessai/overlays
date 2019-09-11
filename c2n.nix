@@ -1,5 +1,6 @@
 { lib # pkgs.lib
 , hlib # haskell.lib
+, ...
 }:
 
 let

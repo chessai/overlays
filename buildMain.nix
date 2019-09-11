@@ -1,6 +1,7 @@
 { hlib # haskell.lib
-, profiling ? false
-, haddocks ? false
+, profiling
+, haddocks
+, ...
 }:
 
 hself: hsuper: {
