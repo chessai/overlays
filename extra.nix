@@ -42,14 +42,14 @@ hself: hsuper: {
 
   hedgehog = hsuper.hedgehog_1_0;
 
-  optparse-applicative = hsuper.c2n {
-    name = "optparse-applicative";
-    rawPath = fetchFromGitHub {
-      owner = "pcapriotti";
-      repo = "optparse-applicative";
-      rev = "5478fc16cbd3384c19e17348a17991896c724a3c";
-      sha256 = "1iaxlmgns285x3wzgqps9ap2fg4dk1k36vcnwvi3x8s64svk2mh0";
-    };
-    apply = [ hlib.dontCheck ];
-  };
+  #optparse-applicative = hsuper.c2n {
+  #  name = "optparse-applicative";
+  #  rawPath = fetchFromGitHub {
+  #    owner = "pcapriotti";
+  #    repo = "optparse-applicative";
+  #    rev = "5478fc16cbd3384c19e17348a17991896c724a3c";
+  #    sha256 = "1iaxlmgns285x3wzgqps9ap2fg4dk1k36vcnwvi3x8s64svk2mh0";
+  #  };
+  #  apply = [ hlib.dontCheck ];
+  #};
 }
