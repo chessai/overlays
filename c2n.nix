@@ -54,7 +54,7 @@ let
                [ (isFile || isLink) (hasExtension ".nix") ]
                [ (beginsWith ".ghc") ]
                [ (hasExtension ".sh") ]
-               [ (hasExtension ".txt") ]
+               #[ (hasExtension ".txt") ]
                [ (hasExtension ".md") ]
                [ (hasExtension ".rst") ]
              ]);
