@@ -1,6 +1,7 @@
 { lib # pkgs.lib
 , hlib # haskell.lib
 , fetchFromGitHub
+, sources ? {} # niv sources
 , ...
 }:
 
@@ -71,7 +72,7 @@ in hself: hsuper: {
     , extraCabal2nixOptions ? []
     }: hself.niv2cn_ {
     inherit name;
-    inherit (hsuper.sources.name) owner repo rev sha256;
+    inherit (sources.${name}) owner repo rev sha256;
     inherit relativePath args apply extraCabal2nixOptions;
   });
 
