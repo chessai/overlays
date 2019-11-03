@@ -1,5 +1,6 @@
 { lib # pkgs.lib
 , hlib # haskell.lib
+, fetchFromGitHub
 , ...
 }:
 
@@ -62,6 +63,36 @@ let
          }
     else path);
 in hself: hsuper: {
+  nivc2n = (
+    { name
+    , relativePath ? null
+    , args ? {}
+    , apply ? []
+    , extraCabal2nixOptions ? []
+    }: hself.niv2cn_ {
+    inherit name;
+    inherit (hsuper.sources.name) owner repo rev sha256;
+    inherit relativePath args apply extraCabal2nixOptions;
+  });
+
+  niv2cn_ = (
+    { name
+    , owner
+    , repo
+    , rev
+    , sha256
+    , relativePath ? null
+    , args ? {}
+    , apply ? []
+    , extraCabal2nixOptions ? []
+    , ...
+  }: hself.c2n {
+    inherit name relativePath args apply extraCabal2nixOptions;
+    rawPath = fetchFromGitHub {
+      inherit owner repo rev sha256;
+    };
+  });
+
   c2n = (
     { name
     , path ? (throw "c2n requires a path argument!")
