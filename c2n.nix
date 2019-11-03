@@ -71,28 +71,9 @@ in hself: hsuper: {
     , args ? {}
     , apply ? []
     , extraCabal2nixOptions ? []
-    }: hself.niv2cn_ {
-    inherit name;
-    inherit (sources.${source}) owner repo rev sha256;
-    inherit relativePath args apply extraCabal2nixOptions;
-  });
-
-  niv2cn_ = (
-    { name
-    , owner
-    , repo
-    , rev
-    , sha256
-    , relativePath ? null
-    , args ? {}
-    , apply ? []
-    , extraCabal2nixOptions ? []
-    , ...
     }: hself.c2n {
-      inherit name relativePath args apply extraCabal2nixOptions;
-      rawPath = fetchFromGitHub {
-        inherit owner repo rev sha256;
-      };
+    inherit name relativePath args apply extraCabal2nixOptions;
+    rawPath = fetchFromGitHub { inherit (sources.${source}) owner repo rev sha256; };
   });
 
   c2n = (
